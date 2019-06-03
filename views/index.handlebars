@@ -4,19 +4,34 @@
 
 <ul>
   {{#each burgers}}
-    {{#unless devoured}}
-      {{!-- {{> cats/cat-block sleep=true}} --}}
-    {{/unless}}
+  {{#unless devoured}}
+
+  <form action="burger/eat/{{id}}" method="POST">
+    <div class="input-group">
+      <li class="form-control">{{id}}. {{burger_name}}</li>
+      <span class="input-group-btn">
+        <button class="btn btn-success devour-button" type="submit">Devour It!</button>
+      </span>
+    </div>
+  </form>
+  {{!-- {{> burgers/burger-block devour=true}} --}}
+  {{/unless}}
   {{/each}}
 </ul>
 
-<h2>Devoured</h2>
+<h2>Devoured Burgers</h2>
 
 <ul>
   {{#each burgers}}
-    {{#if devoured}}
-      {{!-- {{> cats/cat-block sleep=false}} --}}
-    {{/if}}
+  {{#if devoured}}
+  <div class="input-group">
+    <li class="form-control">{{this.id}}. {{this.burger_name}}</li>
+    <span class="input-group-btn">
+      <button class="btn btn-info whine-button" type="button">Whine!</button>
+    </span>
+  </div>
+  {{!-- {{> burgers/burger-block devour=false}} --}}
+  {{/if}}
   {{/each}}
 </ul>
 
@@ -25,14 +40,14 @@
 
   <div class="form-group">
     <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="name">
+    <input type="text" id="newburger" name="name">
   </div>
 
-  {{!-- <div class="form-group">
-    <label for="sleepy">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div> --}}
+  {{!-- <div class = "form-group">
+        <label for="devoured">Devoured yet?</label><br>
+        <input type="radio" name="devoured" value="0" checked>Not quite...<br>
+        <input type="radio" name="devoured" value="1">Devoured!
+    </div> --}}
 
   <button type="submit">Add Burger</button>
 </form>
