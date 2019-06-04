@@ -5,10 +5,8 @@ $(function() {
     var newDevour = $(this).attr("data-newDevour");
 
     var newDevourState = {
-      devoured: true
+      devoured: newDevour
     };
-// console.log(newDevourState);
-
 
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
@@ -28,12 +26,9 @@ $(function() {
     event.preventDefault();
 
     var newBurger = {
-      burger_name: $("#newburger").val().trim(),
-      devoured: false,
+      name: $("#newburger").val().trim(),
+      // devoured: $("[name=devoured]:checked").val().trim()
     };
-
-    console.log(newBurger);
-    
 
     // Send the POST request.
     $.ajax("/api/burgers", {

@@ -12,6 +12,22 @@ h2 {
 }
 
 .create-form {
-  margin-top: 80px;
-  float: left;
+  /* display: block; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-group {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.photo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.addburger {
+  text-align: center
 }
