@@ -1,6 +1,17 @@
 body {
   background-color: yellow;
 }
-h1, h2 {
+
+h1 {
   text-align: center;
+  margin-top: 100px
+} 
+
+h2 {
+  margin-top: 100px
+}
+
+.create-form {
+  margin-top: 80px;
+  float: left;
 }
